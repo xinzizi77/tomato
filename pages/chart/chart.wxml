@@ -1,29 +1,31 @@
 <view class='top'>
   <view class='top-today'>
     <text>今日番茄数</text>
-    <text>0</text>
+    <text class='num'>0</text>
   </view>
   <view class='line'></view>
   <view>
     <text>总计番茄数</text>
-    <text>0</text>
+    <text class='num'>0</text>
   </view>
 </view>
-<view>
-  <view>
-    <view>
-      <text></text>
-      <text></text>
+<view class='chart'>
+  <view class='title'>
+    <view class='title-left'>
+      <text>今日完成</text>
+      <text class='date'>2018年05月05日</text>
     </view>
-    <view></view>
+    <view class='title-right'>0个番茄</view>
   </view>
+  <view></view>
 </view>
-<view>
-  <view>
-    <view>
-      <text></text>
-      <text></text>
+<view class='chart'>
+  <view class='title'>
+    <view class='title-left'>
+      <text>最近一周完成</text>
+      <text class='date'>平均每天0个番茄</text>
     </view>
-    <view></view>
+    <view class='title-right'>0个番茄</view>
   </view>
+  <view></view>
 </view>

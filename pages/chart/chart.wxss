@@ -1,24 +1,61 @@
-/* page{
+ page{
   background: #EDECE8;
-} */
+} 
 .top {
   width: 100%;
   height: 100rpx;
   display: flex;
   flex-direction: row;
-  padding: 20rpx;
+  padding: 40rpx 0 20rpx 0;
   background: #fff;
 } 
 .top view{
-  width: 49%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 22rpx;
+  font-size: 26rpx;
   color: #6C6868;
+
+}
+.top view .num{
+  font-size: 56rpx;
+  color: #F5F3CD;
+  font-weight: bold;
 }
 .top .line{
   border-right:1px solid #eee;
-  width: 20px;
+  width: 0;
+  height: 90rpx;
+}
+.chart{
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  background: #fff;
+}
+.chart .title{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+  height: 80rpx;
+  padding: 20rpx 20rpx 10rpx 20rpx;
+}
+.chart .title-left{
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx;
+  width: 83%;
+}
+.chart .title-left .date{
+  font-size: 22rpx;
+  margin-top: 2px;
+  color: #6C6868;
+}
+.chart .title-right{
+  font-size: 30rpx;
+  color: #6C6868;
   height: 70rpx;
+  line-height: 70rpx;
 }
