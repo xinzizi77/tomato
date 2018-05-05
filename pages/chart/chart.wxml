@@ -1,0 +1,29 @@
+<view class='top'>
+  <view class='top-today'>
+    <text>今日番茄数</text>
+    <text>0</text>
+  </view>
+  <view class='line'></view>
+  <view>
+    <text>总计番茄数</text>
+    <text>0</text>
+  </view>
+</view>
+<view>
+  <view>
+    <view>
+      <text></text>
+      <text></text>
+    </view>
+    <view></view>
+  </view>
+</view>
+<view>
+  <view>
+    <view>
+      <text></text>
+      <text></text>
+    </view>
+    <view></view>
+  </view>
+</view>
