@@ -56,7 +56,7 @@ Page({
         name: '番茄量',
         data: chartData.main.data,
         format: function (val, name) {
-          return val.toFixed(2) + '个';
+          return val + '个';
         }
       }]
     });
