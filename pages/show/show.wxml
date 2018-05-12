@@ -1,0 +1,10 @@
+<view class="wrap">
+<view class="top">“遗憾的是我们生活在两条平行直线永远不会相交的世界里”</view>
+ <view class="circle-box">
+ <canvas class="circle" style="width:300px; height:300px;" canvas-id="canvasArcCir">
+ </canvas>
+ <canvas class="circle" style="z-index: -5; width:300px; height:300px;" canvas-id="canvasCircle">
+ </canvas>
+ <view class="draw_btn" >{{clock}}</view>
+ </view>
+</view>
