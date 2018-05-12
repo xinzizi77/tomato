@@ -38,11 +38,15 @@ function countdown(that, total_micro_second) {
     }else{
       if (min < 10) {
         if (sec < 10) {
-          return hr + ":0"+ min + ":0" + sec;
+          return '0' +hr + ":0"+ min + ":0" + sec;
         }
-        return hr+":0" + min + ":" + sec;
+        return '0' +hr+":0" + min + ":" + sec;
+      }else{
+        if (sec < 10) {
+          return '0' +hr + ":"+ min + ":0" + sec;
+        }
+        return '0' + hr + ":" + min + ":" + sec;              
       }
-      return hr + ":" + min + ":" + sec;      
     }
  }
 
@@ -52,24 +56,24 @@ Page({
   onReady: function () {
     //创建并返回绘图上下文context对象。
     var cxt_arc = wx.createCanvasContext('canvasCircle');
-    cxt_arc.setLineWidth(8);
-    cxt_arc.setStrokeStyle('#eaeaea');
+    cxt_arc.setLineWidth(6);
+    cxt_arc.setStrokeStyle('rgba(0, 0, 0, 0.1)');
     cxt_arc.setLineCap('round');
     cxt_arc.beginPath();
-    cxt_arc.arc(150, 150, 146, 0, 2 * Math.PI, false);
+    cxt_arc.arc(120, 120, 116, 0, 2 * Math.PI, false);
     cxt_arc.stroke();
-    cxt_arc.draw();
+    cxt_arc.draw();   
   },
   onLoad: function (options) {
     var that = this;
     clearInterval(varName);
     function drawArc(s, e) {
-      ctx.setFillStyle('white');
-      ctx.clearRect(0, 0, 300, 300);
+      ctx.setFillStyle('rgba(0, 0, 0, 0.1)');
+      ctx.clearRect(0, 0, 240, 240);
       ctx.draw();
-      var x = 150, y = 150, radius = 146;
-      ctx.setLineWidth(7);
-      ctx.setStrokeStyle('#d81e06');
+      var x = 120, y = 120, radius = 116;
+      ctx.setLineWidth(5);
+      ctx.setStrokeStyle('#fff');
       ctx.setLineCap('round');
       ctx.beginPath();
       ctx.arc(x, y, radius, s, e, false);
@@ -77,7 +81,7 @@ Page({
       ctx.draw()
     }
     var step = 1, startAngle = 1.5 * Math.PI, endAngle = 0;
-    var animation_interval = 1000, n = 121;
+    var animation_interval = 1000, n = 81;
     var animation = function () {
       if (step <= n) {
         endAngle = step * 2 * Math.PI / n + 1.5 * Math.PI;
@@ -89,7 +93,7 @@ Page({
     };
     varName = setInterval(animation, animation_interval);
     clearInterval(cutTime);
-    var total_micro_second = 120;    
+    var total_micro_second = 80;    
     var downTime=function(){
       if (total_micro_second>=0){
         countdown(that, total_micro_second);
