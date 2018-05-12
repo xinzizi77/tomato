@@ -30,12 +30,11 @@
 }
 .chart{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 8px;
   background: #fff;
 }
 .chart .title{
-  width: 100%;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #eee;
@@ -58,4 +57,26 @@
   color: #6C6868;
   height: 70rpx;
   line-height: 70rpx;
+}
+.container{
+  padding: 0;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.container canvas{
+  width: 100%;
+  height: 200px;  
+}
+.title1{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left:10px;
+  font-size: 30rpx;
+
+}
+.title1 text{
+  margin:auto;
 }

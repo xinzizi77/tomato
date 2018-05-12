@@ -17,7 +17,9 @@
     </view>
     <view class='title-right'>0个番茄</view>
   </view>
-  <view></view>
+      <view class="container">
+        <canvas canvas-id="pieCanvas" class="canvas" style="height:300px;" bindtouchstart="touchHandler"></canvas>
+      </view>
 </view>
 <view class='chart'>
   <view class='title'>
@@ -27,5 +29,12 @@
     </view>
     <view class='title-right'>0个番茄</view>
   </view>
-  <view></view>
+  <view class="container">
+	<view class="title1">
+		<view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
+		<text>{{chartTitle}}</text>
+	</view>
+    <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler2"></canvas>
+    <view style="text-align:center;font-size:30rpx" >点击数据每一项查看详情</view>
+</view>
 </view>
