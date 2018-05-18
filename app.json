@@ -1,9 +1,12 @@
 {
-  "pages": [
+
+  "pages":[
     "pages/unlockimg/unlockimg",
     "pages/unlockmusic/unlockmusic",
     "pages/index/index",
     "pages/chart/chart",
+    "pages/show/show",
+    
     "pages/logs/logs",
     "pages/image"
   ],
