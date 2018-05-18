@@ -17,10 +17,13 @@
     <view class='icon' bindtap="onTap">
       <image src='/images/music.png'></image>
     </view>
-    <view class='icon'>
+    <view class='icon' wx:if="{{stop}}" bindtap='onStop'>
       <image src='/images/stop.png'></image>
     </view>
-    <view class='icon'>
+    <view class='icon' wx:if="{{play}}" bindtap='onPlay'>
+      <image src='/images/play.png'></image>
+    </view>
+    <view class='icon' bindtap='onReset'>
       <image src='/images/reset.png'></image>
     </view>
   </view>

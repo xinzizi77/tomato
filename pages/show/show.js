@@ -3,6 +3,31 @@ var interval;
 var varName;
 var cutTime;
 var ctx = wx.createCanvasContext('canvasArcCir');
+var total_micro_second = 80;    
+var step = 1, startAngle = 1.5 * Math.PI, endAngle = 0;
+var animation_interval = 1000, n = 81;
+var animation = function () {
+  if (step <= n) {
+    endAngle = step * 2 * Math.PI / n + 1.5 * Math.PI;
+    drawArc(startAngle, endAngle);
+    step++;
+  } else {
+    clearInterval(varName);
+  }
+}
+function drawArc(s, e) {
+  ctx.setFillStyle('rgba(0, 0, 0, 0.1)');
+  ctx.clearRect(0, 0, 240, 240);
+  ctx.draw();
+  var x = 120, y = 120, radius = 116;
+  ctx.setLineWidth(5);
+  ctx.setStrokeStyle('#fff');
+  ctx.setLineCap('round');
+  ctx.beginPath();
+  ctx.arc(x, y, radius, s, e, false);
+  ctx.stroke()
+  ctx.draw()
+}
 function countdown(that, total_micro_second) {
   //  console.log('剩余时间：' + total_micro_second);
     // 渲染倒计时时钟
@@ -50,9 +75,24 @@ function countdown(that, total_micro_second) {
     }
  }
 
+function draw(){
+  clearInterval(varName);
+  var animation = function () {
+    if (step <= n) {
+      endAngle = step * 2 * Math.PI / n + 1.5 * Math.PI;
+      drawArc(startAngle, endAngle);
+      step++;
+    } else {
+      clearInterval(varName);
+    }
+  };
+  varName = setInterval(animation, animation_interval);
+}
+
 Page({
   data: {
     circle: false,
+    stop:true
   },
   onReady: function () {
     //创建并返回绘图上下文context对象。
@@ -67,42 +107,17 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    clearInterval(varName);
-    function drawArc(s, e) {
-      ctx.setFillStyle('rgba(0, 0, 0, 0.1)');
-      ctx.clearRect(0, 0, 240, 240);
-      ctx.draw();
-      var x = 120, y = 120, radius = 116;
-      ctx.setLineWidth(5);
-      ctx.setStrokeStyle('#fff');
-      ctx.setLineCap('round');
-      ctx.beginPath();
-      ctx.arc(x, y, radius, s, e, false);
-      ctx.stroke()
-      ctx.draw()
-    }
-    var step = 1, startAngle = 1.5 * Math.PI, endAngle = 0;
-    var animation_interval = 1000, n = 81;
-    var animation = function () {
-      if (step <= n) {
-        endAngle = step * 2 * Math.PI / n + 1.5 * Math.PI;
-        drawArc(startAngle, endAngle);
-        step++;
-      } else {
-        clearInterval(varName);
-      }
-    };
-    varName = setInterval(animation, animation_interval);
+    draw();
     clearInterval(cutTime);
-    var total_micro_second = 80;    
-    var downTime=function(){
-      if (total_micro_second>=0){
+    var downTime = function () {
+      if (total_micro_second >= 0) {
         countdown(that, total_micro_second);
-        total_micro_second = total_micro_second-1;
+        total_micro_second = total_micro_second - 1;
         console.log(total_micro_second);
-      } else { 
-        clearInterval(cutTime)};
-    };
+      } else {
+        clearInterval(cutTime)
+      };
+    }
     cutTime = setInterval(downTime,1000);
   },
   onTap:function(event){
@@ -123,5 +138,37 @@ Page({
       circle: true,    
       music: true,
     })
+  },
+  onPlay:function(){
+    var that = this; 
+    var downTime = function () {
+      if (total_micro_second >= 0) {
+        countdown(that, total_micro_second);
+        total_micro_second = total_micro_second - 1;
+        console.log(total_micro_second);
+      } else {
+        clearInterval(cutTime)
+      };
+    }       
+    varName = setInterval(animation, animation_interval);
+    cutTime = setInterval(downTime, 1000);
+    this.setData({
+      play:false,
+      stop:true
+    })
+  },
+  onStop:function(option){
+    clearInterval(varName);
+    clearInterval(cutTime);
+    this.setData({
+      play: true,
+      stop: false
+    })
+  },
+  onReset:function(){
+    step = 1; startAngle = 1.5 * Math.PI; endAngle = 0;
+    animation_interval = 1000; n = 81;
+    draw();
+    total_micro_second = 80;    
   }
 })
