@@ -1,0 +1,5 @@
+<!--pages/unlockimg/unlockimg.wxml-->
+<view class="title">
+<text class="xl">背景图片\n  
+解锁更多不同的背景图片</text>
+</view>

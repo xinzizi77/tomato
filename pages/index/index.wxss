@@ -1,21 +1,84 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.phone_personal{
+    width: 20%;
+    color:white;
+    height:100rpx;
+    line-height:190rpx;
+    text-align: center;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.phone_one{
+    display: flex; 
+    position: relative;
+    justify-content: space-between;
+    background-color:white;
+    width:15%;
+    height:100rpx;
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+    border-radius: 10rpx;
+    border-bottom:2rpx solid rgb(255, 255, 255);
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.person_box{
+    position: relative;
 }
-
-.usermotto {
-  margin-top: 200px;
+.phone_select{
+    margin-top:0;
+    z-index: 100;
+    position: absolute; 
+}
+.select_one{
+    text-align: center;
+    background:transparent;
+    width:15%;   
+    height:100rpx;
+    line-height:190rpx;
+    margin-left: 40rpx;
+    margin-top: 30rpx;
+    border-bottom:2rpx solid white;
+}
+.personal_image{
+    z-index: 100;
+    position: absolute;
+    right:2.5%;
+    width: 100rpx;
+    height: 100rpx;
+    margin: 0rpx auto;
+    transition: All 0.4s ease;  
+    -webkit-transition: All 0.4s ease;
+}
+.rotateRight{
+    transform: rotate(180deg); 
+}
+.tubiao{
+  width: 80rpx;
+  height: 80rpx;
+}
+.task{
+  width: 100%;
+  height: 550px;
+  margin-top: 30rpx;
+}
+.box image{
+  width:50rpx;
+  height: 50rpx;
+  margin-left: 300rpx;
+  margin-top: 50rpx;
+}
+.box{
+   width: 100%;
+  height: 150rpx;
+  background-color: #FBE88C;
+  border-radius: 20rpx;
+  margin-top: 15rpx;
+}
+.xinjian{
+  width: 170rpx;
+  height: 170rpx;
+  z-index: -1;
+  margin-left: 580rpx;
+  margin-top: 170rpx; 
+  position: fixed;
+}
+.xinjian image{
+  width: 140rpx;
+  height: 140rpx;
 }
