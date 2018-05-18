@@ -4,7 +4,7 @@ var varName;
 var cutTime;
 var ctx = wx.createCanvasContext('canvasArcCir');
 function countdown(that, total_micro_second) {
-   console.log('剩余时间：' + total_micro_second);
+  //  console.log('剩余时间：' + total_micro_second);
     // 渲染倒计时时钟
     that.setData({
       clock: dateformat(total_micro_second)
@@ -52,6 +52,7 @@ function countdown(that, total_micro_second) {
 
 Page({
   data: {
+    circle: false,
   },
   onReady: function () {
     //创建并返回绘图上下文context对象。
@@ -103,5 +104,24 @@ Page({
         clearInterval(cutTime)};
     };
     cutTime = setInterval(downTime,1000);
+  },
+  onTap:function(event){
+    // console.log("单击");
+    this.setData({
+      circle: true,    
+      music:true,
+    });
+  },
+  music:function(event){
+    this.setData({
+      circle: false,    
+      music: false,
+    })
+  },
+  music_box:function(){
+    this.setData({
+      circle: true,    
+      music: true,
+    })
   }
 })

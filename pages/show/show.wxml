@@ -1,11 +1,41 @@
 <view class="wrap">
-<view class="top">“遗憾的是我们生活在两条平行直线永远不会相交的世界里”</view>
- <view class="circle-box">
-  <canvas class="circle" style="width:240px; height:240px;" canvas-id="canvasCircle">
- </canvas>
- <canvas class="circle" style="width:240px; height:240px;" canvas-id="canvasArcCir">
- </canvas>
- <view class="draw_btn" >{{clock}}</view>
- <view class='botton'>学习-进行中</view>
- </view>
+  <view class="top">“遗憾的是我们生活在两条平行直线永远不会相交的世界里”</view>
+  <view class="circle-box">
+    <view hidden="{{circle}}">
+      <canvas class="circle" style="width:240px; height:240px;" canvas-id="canvasCircle">
+      </canvas>
+      <canvas class="circle" style="width:240px; height:240px;" canvas-id="canvasArcCir">
+      </canvas>
+    </view>
+    <view class="draw_btn">{{clock}}</view>
+    <view class='botton'>学习-进行中</view>
+  </view>
+  <view class='lan'>
+    <view class='icon'>
+      <image src='/images/tp.png'></image>
+    </view>
+    <view class='icon' bindtap="onTap">
+      <image src='/images/music.png'></image>
+    </view>
+    <view class='icon'>
+      <image src='/images/stop.png'></image>
+    </view>
+    <view class='icon'>
+      <image src='/images/reset.png'></image>
+    </view>
+  </view>
+</view>
+<view class='music' wx:if="{{music}}" bindtap='music'>
+  <view class='box' catchtap='music_box'>
+    <scroll-view scroll-y="true">
+      <view class='song'>无音乐</view>
+      <view class='song'>无音乐</view>
+      <view class='song'>无音乐</view>
+      <view class='song'>无音乐</view>
+      <view class='song'>无音乐</view>
+      <view class='song'>无音乐</view>
+      <view class='song'>无音乐</view>
+      <view class='song'>无音乐</view>
+    </scroll-view>
+  </view>
 </view>
