@@ -1,3 +1,4 @@
+var Data = require('../../data/data.js');
 var app = getApp()
 var interval;
 var varName;
@@ -92,7 +93,8 @@ function draw(){
 Page({
   data: {
     circle: false,
-    stop:true
+    stop:true,
+    bg: 'http://193.112.31.67/images/bg1.jpg'
   },
   onReady: function () {
     //创建并返回绘图上下文context对象。
@@ -113,7 +115,7 @@ Page({
       if (total_micro_second >= 0) {
         countdown(that, total_micro_second);
         total_micro_second = total_micro_second - 1;
-        console.log(total_micro_second);
+        // console.log(total_micro_second);
       } else {
         clearInterval(cutTime)
       };
@@ -126,6 +128,25 @@ Page({
       circle: true,    
       music:true,
     });
+  },
+  picture:function(){
+    this.setData({
+      circle: true,
+      picture: true,
+      picture_key: Data.pictureList
+    });
+  },
+  onPicture:function(){
+    this.setData({
+      circle: false,
+      picture: false,
+    })
+  },
+  picture_box:function(){
+    this.setData({
+      circle: true,
+      picture: true,
+    })
   },
   music:function(event){
     this.setData({
@@ -145,7 +166,7 @@ Page({
       if (total_micro_second >= 0) {
         countdown(that, total_micro_second);
         total_micro_second = total_micro_second - 1;
-        console.log(total_micro_second);
+        // console.log(total_micro_second);
       } else {
         clearInterval(cutTime)
       };
@@ -170,5 +191,14 @@ Page({
     animation_interval = 1000; n = 81;
     draw();
     total_micro_second = 80;    
+  }, 
+  onPictureTap: function (event) {
+    // currentTarget是指当前鼠标所选对象，dataset是指所有自定义属性的集合
+    var pictureId = event.currentTarget.dataset.pictureid;
+    var postData = Data.pictureList[pictureId];
+    console.log(pictureId);
+    this.setData({
+      bg: postData.url
+    })
   }
 })
