@@ -200,5 +200,34 @@ Page({
     this.setData({
       bg: postData.url
     })
+  },
+  onSkip:function(){
+    this.setData({
+      circle: true,
+      skip: true,
+    })
+  },
+  back:function(){
+    this.setData({
+      circle: false,
+      skip: false,
+    })
+  },
+  back_box:function(){
+    this.setData({
+      circle: true,
+      skip: true,
+    })
+  },
+  true:function(){
+    wx.redirectTo({//关闭当前页，跳到不相干的页面，没有返回
+      url: '../index/index'
+    })
+  },
+  cancel:function(){
+    this.setData({
+      circle: false,
+      skip: false,
+    })
   }
 })
