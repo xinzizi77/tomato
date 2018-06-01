@@ -1,0 +1,78 @@
+/* pages/unlockimg/unlockimg.wxss */
+.bg{
+  width: 100%;
+  height: 620px;
+  background-color: #D98E44;
+}
+.title text{
+ float: left;
+ text-align: center;
+ margin-left: 170rpx;
+ margin-top: 80rpx;
+  color: white;
+}
+.music{
+  width: 100%;
+  height: 550px;
+  border: 1px solid transparent;
+}
+ .music view{
+   width: 100%;
+  height:100rpx;
+  
+  border-bottom: 1px solid white;
+ }
+  .music1{
+   width: 100%;
+  height:100rpx;
+  margin-top: 290rpx;
+  border-bottom: 1px solid white;
+ }
+.music view text{
+  float: left;
+  padding-top: 40rpx;
+  padding-left: 120rpx;
+  color: white;
+}
+.music1 .box{
+  width: 150rpx;
+  height: 65rpx; 
+  float: left;
+  margin-left: 260rpx;
+  margin-top: 20rpx;
+  border: 1px solid white;
+  border-radius: 10%;
+}
+.music1 .box image{
+  width: 55rpx;
+  height: 55rpx;
+  margin-top: 7rpx;
+  margin-left: 10rpx;
+
+}
+.music1 .box text{
+  float:right;
+  margin-right: 15rpx;
+  margin-top: -100rpx;
+}
+.music view .box{
+  width: 150rpx;
+  height: 65rpx; 
+  float: left;
+  margin-left: 260rpx;
+  margin-top: 20rpx;
+  border: 1px solid white;
+  border-radius: 10%;
+}
+.music view .box image{
+   width: 55rpx;
+  height: 55rpx;
+  margin-top: 7rpx;
+  margin-left: 10rpx;
+
+}
+.music view .box text{
+  float:right;
+  margin-right: 15rpx;
+  margin-top: -100rpx;
+}

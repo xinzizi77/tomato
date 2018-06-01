@@ -1,4 +1,5 @@
  <view class="phone_one" bindtap="clickPerson">
+ 
   <view class="phone_personal">{{firstPerson}}</view>
   <image src="images/caidan.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
   </view>
