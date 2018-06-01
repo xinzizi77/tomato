@@ -3,10 +3,10 @@
   "pages":[
     
     
-    
+    "pages/show/show",
     "pages/unlockimg/unlockimg",
     "pages/unlockmusic/unlockmusic",
-    "pages/show/show",
+   
     "pages/chart/chart",
     "pages/index/index",
     "pages/logs/logs",
