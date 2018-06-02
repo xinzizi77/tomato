@@ -18,7 +18,7 @@ Page({
   },
   onMusicTap1:function(event){
     this.setData({
-      src: "http://193.112.31.67/music/%E9%AB%98%E5%B1%B1%E6%B5%81%E6%B0%B4.mp3"
+      src: "http://193.112.31.67/music/music1.mp3"
     });
     this.audioCtx = wx.createAudioContext('myAudio');
     this.audioCtx.play();    

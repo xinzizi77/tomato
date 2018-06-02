@@ -1,58 +1,22 @@
 <!--pages/unlockimg/unlockimg.wxml-->
-<view class="bg">
-  <view class="title">
-    <text decode="{{true}}">背景音乐\n                         
-  解锁更多不同的背景音乐</text>
-  </view>
-  <view class="music">
-    <view class="music1">
-      <text>林中细雨</text>
-      <a class="box" href="#">
-        <image src='/images/jinbi.png'></image>
-        <text>500</text>
-      </a>
-    </view>
-    <view>
-      <text>林中细雨</text>
-      <a class="box" href="#">
-        <image src='/images/jinbi.png'></image>
-        <text>500</text>
-      </a>
-    </view>
-    <view>
-      <text>林中细雨</text>
-      <a class="box" href="#">
-        <image src='/images/jinbi.png'></image>
-        <text>500</text>
-      </a>
-    </view>
-    <view>
-      <text>林中细雨</text>
-      <a class="box" href="#">
-        <image src='/images/jinbi.png'></image>
-        <text>500</text>
-      </a>
-    </view>
-    <view>
-      <text>林中细雨</text>
-      <a class="box" href="#">
-        <image src='/images/jinbi.png'></image>
-        <text>500</text>
-      </a>
-    </view>
-    <view>
-      <text>林中细雨</text>
-      <a class="box" href="#">
-        <image src='/images/jinbi.png'></image>
-        <text>500</text>
-      </a>
-    </view>
-    <view>
-      <text>林中细雨</text>
-      <a class="box" href="#">
-        <image src='/images/jinbi.png'></image>
-        <text>500</text>
-      </a>
-    </view>
-  </view>
+<view class='return' bindtap='return'>返回</view>
+<view class="title">
+  <text decode="{{true}}">背景音乐\n                         
+ 解锁更多不同的背景音乐\n（双击歌名可试听）</text>
 </view>
+<view class='music'>
+  <view class='row'>
+    <view class='music_name' catchtap="onMusicTap1">高山流水</view>
+    <view class='lock'>默认</view>
+  </view>
+  <block wx:for="{{music_key}}" wx:for-item="item">
+    <view class='row'>
+      <view class='music_name' catchtap="onMusicTap" data-musicId="{{item.musicId}}">{{item.music_name}}</view>
+      <view class='unlock'>
+        <image src='/images/tomato.png'></image>
+        <text>{{item.num}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<audio src="{{src}}" id="myAudio" controls="{{false}}" loop></audio>
