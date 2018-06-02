@@ -1,37 +1,64 @@
 <!--pages/unlockimg/unlockimg.wxml-->
 <view class="bg">
-<view class="title"> 
-<text decode="{{true}}">背景音乐\n                         
+  <view class="title">
+    <text decode="{{true}}">背景音乐\n                         
   解锁更多不同的背景音乐</text>
-</view>
-<view class="music">
-<view class="music1">
-<text>林中细雨</text>
-<a class="box" href="#"><image src='images/jinbi.png'></image><text>500</text></a>
-</view>
-<view>
-<text>林中细雨</text>
-<a class="box" href="#"><image src='images/jinbi.png'></image><text>500</text></a>
-</view>
-<view>
-<text>林中细雨</text>
-<a class="box" href="#"><image src='images/jinbi.png'></image><text>500</text></a>
-</view>
-<view>
-<text>林中细雨</text>
-<a class="box" href="#"><image src='images/jinbi.png'></image><text>500</text></a>
-</view>
-<view>
-<text>林中细雨</text>
-<a class="box" href="#"><image src='images/jinbi.png'></image><text>500</text></a>
-</view>
-<view>
-<text>林中细雨</text>
-<a class="box" href="#"><image src='images/jinbi.png'></image><text>500</text></a>
-</view>
-<view>
-<text>林中细雨</text>
-<a class="box" href="#"><image src='images/jinbi.png'></image><text>500</text></a>
-</view>
-</view>
+  </view>
+  <view class="music">
+    <view class="music1">
+    <view class='icon' wx:if="{{stop}}" bindtap='onStop'>
+        <image src='images/stop.png'></image>
+      </view>
+      <view class='icon' wx:if="{{play}}" bindtap='onPlay'>
+        <image src='images/play.png'></image>
+      </view>
+      <text>林中细雨</text>
+      <a class="box" href="#">
+        <image src='images/jinbi.png'></image>
+        <text>500</text>
+      </a>
+    </view>
+    <view>
+      <text>林中细雨</text>
+      <a class="box" href="#">
+        <image src='images/jinbi.png'></image>
+        <text>500</text>
+      </a>
+    </view>
+    <view>
+      <text>林中细雨</text>
+      <a class="box" href="#">
+        <image src='images/jinbi.png'></image>
+        <text>500</text>
+      </a>
+    </view>
+    <view>
+      <text>林中细雨</text>
+      <a class="box" href="#">
+        <image src='images/jinbi.png'></image>
+        <text>500</text>
+      </a>
+    </view>
+    <view>
+      <text>林中细雨</text>
+      <a class="box" href="#">
+        <image src='images/jinbi.png'></image>
+        <text>500</text>
+      </a>
+    </view>
+    <view>
+      <text>林中细雨</text>
+      <a class="box" href="#">
+        <image src='images/jinbi.png'></image>
+        <text>500</text>
+      </a>
+    </view>
+    <view>
+      <text>林中细雨</text>
+      <a class="box" href="#">
+        <image src='images/jinbi.png'></image>
+        <text>500</text>
+      </a>
+    </view>
+  </view>
 </view>

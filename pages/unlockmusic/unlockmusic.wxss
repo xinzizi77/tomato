@@ -50,6 +50,16 @@
   margin-left: 10rpx;
 
 }
+.music1 .icon {
+  width: 20%;
+  text-align: center;
+  border: 1px solid red;
+}
+.icon image {
+  width: 30px;
+  height: 30px;
+  border: 1px solid red;
+}
 .music1 .box text{
   float:right;
   margin-right: 15rpx;

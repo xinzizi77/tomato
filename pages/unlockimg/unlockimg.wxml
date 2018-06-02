@@ -7,10 +7,13 @@
 <view class=''>
 <swiper class="movie-swiper" indicator-dots='{{true}}' previous-margin='50rpx' next-margin='50rpx'
  current='{{weeklyMovieList.length-1}}'>
-<swiper-item class='movie' wx:for="{{weeklyMovieList}}">
+<swiper-item class='movie' wx:for="{{weeklyMovieList}}" wx:key="key">
 <view class='container movie-card'>
 <image class='movie-image' src='{{item.imagepath}}'></image>
-
+<view class="jinbi">
+ <image src='images/jinbi.png'></image>
+        <text>500</text>
+        </view>
 </view>
 </swiper-item>
 </swiper>

@@ -43,3 +43,17 @@ border:1px solid blue;
 border-right: 0;
 border-radius: 10%;
 }
+.jinbi{
+  float: left;
+  
+}
+.jinbi image{
+  width: 90rpx;
+  height: 90rpx;
+  float: left;
+}
+.jinbi text{
+  float: left;
+  margin-top:7rpx;
+  font-size: 43rpx;
+}
