@@ -11,7 +11,7 @@
 <view class='container movie-card'>
 <image class='movie-image' src='{{item.imagepath}}'></image>
 <view class="jinbi">
- <image src='images/jinbi.png'></image>
+ <image src='/images/jinbi.png'></image>
         <text>500</text>
         </view>
 </view>

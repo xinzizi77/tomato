@@ -1,14 +1,14 @@
 {
 
   "pages":[
-    "pages/unlockmusic/unlockmusic",
     "pages/index/index",
-    "pages/unlockimg/unlockimg",
     "pages/show/show",
-    "pages/chart/chart",
    
-    "pages/logs/logs",
-    "pages/image/image"
+    
+    "pages/unlockmusic/unlockmusic",
+    "pages/unlockimg/unlockimg",
+    "pages/chart/chart",
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,15 +24,15 @@
       {
         "pagePath": "pages/unlockimg/unlockimg",
         "text": "背景图",
-        "iconPath": "pages/image/pic.png",
-        "selectedIconPath": "pages/image/pic1.png"
+        "iconPath": "images/pic.png",
+        "selectedIconPath": "images/pic1.png"
       
       },
       {
         "pagePath": "pages/unlockmusic/unlockmusic",
         "text": "背景音乐",
-        "iconPath": "pages/image/music.png",
-        "selectedIconPath": "pages/image/music1.png"
+        "iconPath": "images/music.png",
+        "selectedIconPath": "images/music1.png"
       }
     ]
   }
