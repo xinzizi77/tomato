@@ -16,7 +16,7 @@
         <image src='/images/tp.png'></image>
       </view>
       <view class='icon' bindtap="onTap">
-        <image src='/images/music.png'></image>
+        <image src='/images/music2.png'></image>
       </view>
       <view class='icon' wx:if="{{stop}}" bindtap='onStop'>
         <image src='/images/stop.png'></image>

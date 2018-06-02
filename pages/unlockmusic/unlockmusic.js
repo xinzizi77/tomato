@@ -1,12 +1,31 @@
+var Data = require('../../data/data.js');
 Page({
   onReady: function (e) {
     // 使用 wx.createAudioContext 获取 audio 上下文 context
     this.audioCtx = wx.createAudioContext('myAudio')
   },
   data: {
-    poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
-    name: '',
-    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+    music_key: Data.musicList1
   },
-  
+  onMusicTap: function (event) {
+    var musicId = event.currentTarget.dataset.musicid;
+    var postData = Data.musicList[musicId];
+    this.setData({
+      src: postData.url
+    });
+    this.audioCtx = wx.createAudioContext('myAudio');
+    this.audioCtx.play();
+  },
+  onMusicTap1:function(event){
+    this.setData({
+      src: "http://193.112.31.67/music/%E9%AB%98%E5%B1%B1%E6%B5%81%E6%B0%B4.mp3"
+    });
+    this.audioCtx = wx.createAudioContext('myAudio');
+    this.audioCtx.play();    
+  },
+  return: function () {
+    wx.redirectTo({//关闭当前页，跳到不相干的页面，没有返回
+      url: '../index/index'
+    })
+  }
 })

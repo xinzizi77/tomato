@@ -1,9 +1,9 @@
 {
 
   "pages":[
+    "pages/unlockimg/unlockimg",    
     "pages/unlockmusic/unlockmusic",
     "pages/index/index",
-    "pages/unlockimg/unlockimg",
     "pages/show/show",
     "pages/chart/chart",
    
