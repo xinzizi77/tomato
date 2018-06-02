@@ -1,8 +1,4 @@
-.bg{
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
-}
+
 .phone_personal{
     width: 20%;
     color:white;
@@ -20,7 +16,7 @@
     margin-left: 20rpx;
     margin-top: 10rpx;
     border-radius: 10rpx;
-    border-bottom:2rpx solid rgb(255, 255, 255);
+   
 }
 
 
@@ -28,7 +24,7 @@
     position: relative;
 }
 .phone_select{
-    margin-top:0;
+    
     z-index: 100;
     position: absolute; 
 }
@@ -39,16 +35,17 @@
     height:100rpx;
     line-height:190rpx;
     margin-left: 40rpx;
-    margin-top: 30rpx;
+    margin-top: 50rpx;
     border-bottom:2rpx solid white;
 }
 .personal_image{
     z-index: 100;
     position: absolute;
     right:2.5%;
-    width: 100rpx;
-    height: 100rpx;
+    width: 120rpx;
+    height: 120rpx;
     margin: 0rpx auto;
+    margin-top: 10rpx;
     transition: All 0.4s ease;  
     -webkit-transition: All 0.4s ease;
 }
@@ -62,7 +59,7 @@
 .task{
   width: 100%;
   height: 550px;
-  margin-top: 30rpx;
+  margin-top: 45rpx;
 }
 .box image{
   width:50rpx;
@@ -88,4 +85,5 @@
 .xinjian image{
   width: 140rpx;
   height: 140rpx;
+  
 }
