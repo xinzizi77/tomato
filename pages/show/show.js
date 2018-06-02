@@ -98,7 +98,10 @@ Page({
   data: {
     circle: false,
     stop:true,
-    bg: 'http://193.112.31.67/images/bg1.jpg'
+    bg: 'http://193.112.31.67/images/bg1.jpg',
+    picture_key: Data.pictureList,    
+    music_key: Data.musicList,
+    url:false   
   },
   onReady: function () {
     //创建并返回绘图上下文context对象。
@@ -137,7 +140,6 @@ Page({
     this.setData({
       circle: true,
       picture: true,
-      picture_key: Data.pictureList
     });
   },
   onPicture:function(){
@@ -151,6 +153,10 @@ Page({
       circle: true,
       picture: true,
     })
+  },
+  audioPlay: function (event) {
+    console.log(this);
+    this.audioCtx.play()
   },
   music:function(event){
     this.setData({
@@ -204,6 +210,21 @@ Page({
     this.setData({
       bg: postData.url
     })
+  },
+  onMusicTap:function(event){
+    var musicId = event.currentTarget.dataset.musicid;
+    var postData = Data.musicList[musicId];
+    this.setData({
+      src: postData.url
+    });
+    this.audioCtx = wx.createAudioContext('myAudio');
+    this.audioCtx.play();
+    console.log(event);    
+  },
+  MusicStop:function(){
+    this.setData({
+      src: false
+    });
   },
   onSkip:function(){
     this.setData({
