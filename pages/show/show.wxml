@@ -46,22 +46,19 @@
   <view class='music' wx:if="{{music}}" bindtap='music'>
     <view class='box' catchtap='music_box'>
       <scroll-view scroll-y="true">
-        <view class='song'>无音乐</view>
-        <view class='song'>无音乐</view>
-        <view class='song'>无音乐</view>
-        <view class='song'>无音乐</view>
-        <view class='song'>无音乐</view>
-        <view class='song'>无音乐</view>
-        <view class='song'>无音乐</view>
-        <view class='song'>无音乐</view>
+        <view class='song' catchtap='MusicStop'>无音乐</view>
+        <block wx:for="{{music_key}}" wx:for-item="item">
+          <view class='song' catchtap="onMusicTap" data-musicId="{{item.musicId}}">{{item.music_name}}</view>
+        </block>
       </scroll-view>
     </view>
   </view>
   <view class='back' wx:if="{{skip}}" bindtap='back'>
-    <view class='box' catchtap='back_box'>
+    <view class='box' catcshtap='back_box'>
       <text>是否确认放弃当前任务(放弃则没有番茄)？</text>
       <view catchtap='true'>确定</view>
       <view catchtap='cancel'>返回</view>
     </view>
   </view>
+  <audio src="{{src}}" id="myAudio" controls="{{false}}" loop></audio>  
 </view>
