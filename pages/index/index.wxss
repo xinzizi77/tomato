@@ -1,3 +1,8 @@
+.bg{
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
 .phone_personal{
     width: 20%;
     color:white;
@@ -9,8 +14,7 @@
     display: flex; 
     position: relative;
     justify-content: space-between;
-    background-color:white;
-
+  
     width:15%;
     height:100rpx;
     margin-left: 20rpx;

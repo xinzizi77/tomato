@@ -1,20 +1,22 @@
+ <view class="bg">
+ <image class="/images/bg.jpg"></image>
  <view class="phone_one" bindtap="clickPerson">
- 
   <view class="phone_personal">{{firstPerson}}</view>
-  <image src="images/caidan.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
+  <image src="/images/caidan.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
   </view>
  
 <view class="person_box">
    <view class="phone_select" hidden="{{selectPerson}}">
-    <view class="select_one" bindtap="mySelect"><image src="images/shop.png" class="tubiao"></image></view>
-    <view class="select_one" bindtap="mySelect" ><image src="images/cup.png" class="tubiao"></image></view>
-    <view class="select_one" bindtap="mySelect"><image src="images/shezhi.png" class="tubiao"></image></view>
+    <view class="select_one" bindtap="mySelect"><image src="/images/shop.png" class="tubiao"></image></view>
+    <view class="select_one" bindtap="mySelect" ><image src="/images/cup.png" class="tubiao"></image></view>
+    <view class="select_one" bindtap="mySelect"><image src="/images/shezhi.png" class="tubiao"></image></view>
   </view>
  </view>
  <view class="task">
- <view class="box"><image src="images/cup.png"></image><text>学习</text></view>
-  <view class="box"><image src="images/cup.png"></image><text>学习</text></view>
-   <view class="box"><image src="images/cup.png"></image><text>学习</text></view>
-    <view class="box"><image src="images/cup.png"></image><text>学习</text></view>
-     <view class="xinjian"><image src="images/xinjian.png"></image></view>
+ <view class="box"><image src="/images/cup.png"></image><text>学习</text></view>
+  <view class="box"><image src="/images/cup.png"></image><text>学习</text></view>
+   <view class="box"><image src="/images/cup.png"></image><text>学习</text></view>
+    <view class="box"><image src="/images/cup.png"></image><text>学习</text></view>
+     <view class="xinjian"><image src="/images/xinjian.png"></image></view>
+ </view>
  </view>
