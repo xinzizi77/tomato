@@ -9,6 +9,28 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log(res.code);
+          if (res.code) {
+            //发起网络请求
+            wx.request({
+              url: 'https://zhishi.kermi.xyz/small.php',
+              data: {
+                code: res.code
+              },
+              header: {
+                "content-type": "application/x-www-form-urlencoded" // 默认值
+              },
+              method:"POST",
+              success:function(arr){
+                console.log(arr);
+              },
+              fail:function(){ 
+                console.log("发送失败");
+              }
+            })
+          } else {
+            console.log('获取用户登录态失败！' + res.errMsg)
+          }
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
