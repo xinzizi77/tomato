@@ -2,6 +2,20 @@ var wxCharts = require('../../utils/wxcharts.js');
 var app = getApp();
 var pieChart = null;
 var columnChart = null;
+// console.log(wx.getStorageSync('openid'));                                             
+ wx.request({
+   url: 'https://zhishi.kermi.xyz/small.php',
+   data:{
+     openid: wx.getStorageSync('openid')
+   },
+   header: {
+     "content-type": "application/x-www-form-urlencoded" // 默认值
+   },
+   method:"POST",
+   success:function(obj){
+     console.log(obj);
+   }
+ })                                            
 var chartData = {
   main: {
     data: [12, 16, 14, 13,10,11,13],

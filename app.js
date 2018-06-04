@@ -9,7 +9,7 @@ App({
     // 登录
     wx.login({
       success: res => {
-        console.log(res.code);
+        // console.log(res.code);
           if (res.code) {
             //发起网络请求
             wx.request({
@@ -21,8 +21,8 @@ App({
                 "content-type": "application/x-www-form-urlencoded" // 默认值
               },
               method:"POST",
-              success:function(arr){
-                console.log(arr);
+              success:function(res){
+                wx.setStorageSync('openid', res.data.openid);
               },
               fail:function(){ 
                 console.log("发送失败");
