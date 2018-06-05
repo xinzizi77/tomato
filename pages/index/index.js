@@ -1,8 +1,8 @@
 Page({
   data: {
     selectPerson: true,
-    
     selectArea: false,
+    show:false
   },
   //点击选择类型
   clickPerson: function () {
@@ -25,6 +25,21 @@ Page({
       firstPerson: e.target.dataset.me,
       selectPerson: true,
       selectArea: false,
+    })
+  },
+  tianjia: function (e) {
+    this.setData({
+      show: true
+    })
+  },
+  save:function(){
+    this.setData({
+      show: false
+    })
+  },
+  cancel:function(){
+    this.setData({
+      show: false
     })
   },
   onLoad: function (options) {

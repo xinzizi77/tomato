@@ -1,10 +1,10 @@
 {
 
   "pages":[
+    "pages/chart/chart",    
     "pages/index/index",    
     "pages/show/show",    
     "pages/unlockimg/unlockimg",    
-    "pages/chart/chart",    
     "pages/unlockmusic/unlockmusic",
     "pages/logs/logs"
   ],

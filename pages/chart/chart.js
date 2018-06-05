@@ -3,19 +3,7 @@ var app = getApp();
 var pieChart = null;
 var columnChart = null;
 // console.log(wx.getStorageSync('openid'));                                             
- wx.request({
-   url: 'https://zhishi.kermi.xyz/small.php',
-   data:{
-     openid: wx.getStorageSync('openid')
-   },
-   header: {
-     "content-type": "application/x-www-form-urlencoded" // 默认值
-   },
-   method:"POST",
-   success:function(obj){
-     console.log(obj);
-   }
- })                                            
+                                  
 var chartData = {
   main: {
     data: [12, 16, 14, 13,10,11,13],
@@ -147,26 +135,43 @@ Page({
       console.error('getSystemInfoSync failed!');
     }
 
-    pieChart = new wxCharts({
-      animation: true,
-      canvasId: 'pieCanvas',
-      type: 'pie',
-      series: [{
-        name: '阅读',
-        data: 15,
-      }, {
-        name: '运动',
-        data: 10,
-      }, {
-        name: '休息',
-        data: 20,
-      }, {
-        name: '工作',
-        data: 40,
-      }],
-      width: windowWidth,
-      height: 300,
-      dataLabel: true,
-    });
+    //饼形图的数据获取
+    wx.request({
+      url: 'https://zhishi.kermi.xyz/statistics.php',
+      data: {
+        openid: wx.getStorageSync('openid')
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded" // 默认值
+      },
+      method: "POST",
+      success: function (obj) {
+        console.log(obj.data);
+        // console.log(typeof arry);
+        pieChart = new wxCharts({
+          animation: true,
+          canvasId: 'pieCanvas',
+          type: 'pie',
+          series:obj.data,
+          // series: [{
+          //   name: '阅读',
+          //   data: 15,
+          // }, {
+          //   name: '运动',
+          //   data: 10,
+          // }, {
+          //   name: '休息',
+          //   data: 20,
+          // }, {
+          //   name: '工作',
+          //   data: 40,
+          // }],
+          width: windowWidth,
+          height: 300,
+          dataLabel: true,
+        });
+      }
+    })           
+    
   }
 });

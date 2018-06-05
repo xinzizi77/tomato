@@ -1,21 +1,66 @@
-<view class="all" style='background: url("/images/bbg3.png"); background-size: 100%, 100%;'>
- <view class="phone_one" bindtap="clickPerson">
-  <view class="phone_personal">{{firstPerson}}</view>
-  <image src="/images/caidan11.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
+<view class="all" style='background: url("/images/bbg3.png"); background-size: 100% 100%;'>
+  <view class="phone_one" bindtap="clickPerson">
+    <view class="phone_personal">{{firstPerson}}</view>
+    <image src="/images/caidan11.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
   </view>
- 
-<view class="person_box">
-   <view class="phone_select" hidden="{{selectPerson}}">
-    <view class="select_one" bindtap="mySelect"><image src="/images/sshop.png" class="tubiao"></image></view>
-    <view class="select_one" bindtap="mySelect" ><image src="/images/tongji.png" class="tubiao"></image></view>
-   
+  <view class="person_box">
+    <view class="phone_select" hidden="{{selectPerson}}">
+      <view class="select_one" bindtap="mySelect">
+        <image src="/images/sshop.png" class="tubiao"></image>
+      </view>
+      <view class="select_one" bindtap="mySelect">
+        <image src="/images/tongji.png" class="tubiao"></image>
+      </view>
+    </view>
   </view>
- </view>
- <view class="task">
- <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
-  <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
-   <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
-    <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
-     <view class="xinjian"><image src="/images/xinjian4.png"></image></view>
- </view>
- </view>
+  <view class="task">
+    <view class="box">
+      <view class='target'>
+        <text>看书</text>
+        <text>时长--25分钟</text>
+      </view>
+      <text class='start'>开始</text>
+    </view>
+    <view class="box">
+      <view class='target'>
+        <text>锻炼</text>
+        <text>时长--25分钟</text>
+      </view>
+      <text class='start'>开始</text>
+    </view>
+    <view class="box">
+      <view class='target'>
+        <text>工作</text>
+        <text>时长--25分钟</text>
+      </view>
+      <text class='start'>开始</text>
+    </view>
+    <view class="box">
+      <view class='target'>
+        <text>学习</text>
+        <text>时长--25分钟</text>
+      </view>
+      <text class='start'>开始</text>
+    </view>
+  </view>
+  <view class="xinjian" bindtap="tianjia">
+    <image src="/images/xinjian4.png"></image>
+  </view>
+  <view class='bg' wx:if="{{show}}">
+    <view class='mainbox'>
+      <view class='top'>
+        <text class='text'>添加任务</text>
+        <text class='true' bindtap='save'>✓</text>
+        <text class='false' bindtap='cancel'>X</text>
+      </view>
+      <view class='bottom'>
+        <view class='input'>
+          <input type='text' placeholder="请输入任务名称"></input>
+        </view>
+        <view class='time'>
+          <input type='text' placeholder="请输入所需时长（单位：min）"></input>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

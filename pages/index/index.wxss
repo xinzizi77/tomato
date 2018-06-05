@@ -24,9 +24,13 @@
     position: relative;
 }
 .phone_select{
-    
-    z-index: 100;
     position: absolute; 
+    width: 52px;
+    height: 180px;
+    top: 18px;
+    background: #F5F3CD;
+    left: 12px;
+    border-radius: 30px;
 }
 .select_one{
     text-align: center;
@@ -34,7 +38,7 @@
     width:15%;   
     height:100rpx;
     line-height:190rpx;
-    margin-left: 40rpx;
+    margin-left: 14rpx;
     margin-top: 50rpx;
     border-bottom:2rpx solid white;
 }
@@ -53,13 +57,13 @@
     transform: rotate(180deg); 
 }
 .tubiao{
-  width: 80rpx;
-  height: 80rpx;
+  width: 40px;
+  height: 40px;
 }
 .task{
   width: 100%;
   height: 550px;
-  margin-top: 45rpx;
+  margin-top: 80rpx;
 }
 .box image{
   width:50rpx;
@@ -68,22 +72,97 @@
   margin-top: 50rpx;
 }
 .box{
-   width: 100%;
-  height: 150rpx;
+   width: 90%;
+  height: 60px;
   background-color: #FBE88C;
   border-radius: 20rpx;
-  margin-top: 15rpx;
+  margin-top: 12px;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: row;
 }
 .xinjian{
   width: 170rpx;
-  height: 170rpx;
-  z-index: -1;
-  margin-left: 580rpx;
-  margin-top: 170rpx; 
+  height: 170rpx; 
+  left: 280px;
+  top: 420px; 
   position: fixed;
 }
 .xinjian image{
   width: 140rpx;
   height: 140rpx;
-  
+}
+.target{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  padding-left: 5%;
+}
+.target text{
+  heigh:30px;
+  line-height: 30px;
+}
+.start{
+  width: 25%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 23px;
+}
+.bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.bg .mainbox{
+  width: 78%;
+  height: 190px;
+  margin-left: 11%;
+  margin-top: 120px;
+  background: #fff;
+  border-radius: 3px;
+}
+.bg .mainbox .top{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  line-height: 50px;
+  background: #F5F3CD;
+  border-radius: 3px 3px 0 0;
+}
+.bg .mainbox .top .text{
+  width: 60%;
+  padding-left: 6%;
+}
+.bg .mainbox .top .true,.bg .mainbox .top .false{
+  width: 17%;
+  text-align: center;
+}
+.bg .bottom .input{
+  width: 90%;
+  height: 40px;
+  margin-left: 5%;
+  border-bottom: 2px solid #F5F3CD;
+}
+.bg .bottom .input input{
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+}
+.bg .bottom .time{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 5%;
+  border-bottom: 2px solid #F5F3CD;  
+  /* font-size: 15px; */
+}
+.bg .bottom .time input{
+  width:100%;
+  height: 50px;
 }
