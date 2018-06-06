@@ -36,7 +36,7 @@ page {
 }
 
 .movie-swiper {
-  height: 80vh;
+  height: 76vh;
 }
 
 .movie-card {
@@ -77,8 +77,22 @@ button{
   padding-right: 8px;
 }
 .return{
-  height: 20rpx;
+  width:80%;
+  height: 29px;
+  line-height: 29px;
   padding-left: 16px;
   padding-top:8px;
   color: #fff;
+}
+.go{
+  width: 38%;
+  height: 29px;
+  line-height: 29px;
+  color: #fff;
+  text-align: center;
+    padding-top:8px;
+}
+.button{
+  display: flex;
+  flex-direction: row;
 }

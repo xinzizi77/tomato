@@ -347,6 +347,7 @@ function getMaxTextListLength(list) {
 
 function getRadarCoordinateSeries(length) {
     var eachAngle = 2 * Math.PI / length;
+    console.log(eachAngle);
     var CoordinateSeries = [];
     for (var i = 0; i < length; i++) {
         CoordinateSeries.push(eachAngle * i);
@@ -580,8 +581,9 @@ function getPieDataPoints(series) {
     var _start_ = 0;
     series.forEach(function (item) {
         item.data = item.data === null ? 0 : item.data;
-        count += item.data;
+        count += parseFloat(item.data);
     });
+    // console.log(count);
     series.forEach(function (item) {
         item.data = item.data === null ? 0 : item.data;
         item._proportion_ = item.data / count * process;
@@ -675,7 +677,7 @@ function getYAxisTextList(series, opts, config) {
         return item !== null;
     });
     var minData = Math.min.apply(this, data);
-    var maxData = Math.max.apply(this, data);
+    var maxData = Math.max.apply(this, data);    
     if (typeof opts.yAxis.min === 'number') {
         minData = Math.min(opts.yAxis.min, minData);
     }

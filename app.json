@@ -1,11 +1,11 @@
 {
 
   "pages":[
-    "pages/chart/chart",    
     "pages/index/index",    
+    "pages/unlockmusic/unlockmusic",    
+    "pages/unlockimg/unlockimg",
+    "pages/chart/chart",    
     "pages/show/show",    
-    "pages/unlockimg/unlockimg",    
-    "pages/unlockmusic/unlockmusic",
     "pages/logs/logs"
   ],
   "window": {
@@ -13,25 +13,5 @@
     "navigationBarBackgroundColor": "#F5F3CD",
     "navigationBarTitleText": "时光周",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "black",
-    "selectedColor": "black",
-    
-    "list": [
-      {
-        "pagePath": "pages/unlockimg/unlockimg",
-        "text": "背景图",
-        "iconPath": "images/pic.png",
-        "selectedIconPath": "images/pic1.png"
-      
-      },
-      {
-        "pagePath": "pages/unlockmusic/unlockmusic",
-        "text": "背景音乐",
-        "iconPath": "images/music1.png",
-        "selectedIconPath": "images/music1.png"
-      }
-    ]
   }
 }

@@ -1,5 +1,8 @@
 <!--pages/unlockimg/unlockimg.wxml-->
+<view class='button'>
 <view class='return' bindtap='return'>返回</view>
+<view class='go' bindtap='go'>解锁音乐-></view>
+</view>
 <view class="title">
   <text decode="{{true}}">背景图片\n                         
   解锁更多不同的背景图片</text>

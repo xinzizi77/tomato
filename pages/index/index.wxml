@@ -4,22 +4,22 @@
     <image src="/images/caidan11.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
   </view>
   <view class="person_box">
-    <view class="phone_select" hidden="{{selectPerson}}">
-      <view class="select_one" bindtap="mySelect">
+    <view class="phone_select" hidden="{{selectPerson}}" catchtap='wai'>
+      <view class="select_one" catchtap='lock'>
         <image src="/images/sshop.png" class="tubiao"></image>
       </view>
-      <view class="select_one" bindtap="mySelect">
+      <view class="select_two" catchtap="chart">
         <image src="/images/tongji.png" class="tubiao"></image>
       </view>
     </view>
   </view>
   <view class="task">
-    <view class="box">
+    <view class="box" bindlongpress="del">
       <view class='target'>
-        <text>看书</text>
+        <text>看书(长按删除)</text>
         <text>时长--25分钟</text>
       </view>
-      <text class='start'>开始</text>
+      <text class='start' catchtap="skip">开始</text>
     </view>
     <view class="box">
       <view class='target'>
@@ -46,12 +46,12 @@
   <view class="xinjian" bindtap="tianjia">
     <image src="/images/xinjian4.png"></image>
   </view>
-  <view class='bg' wx:if="{{show}}">
-    <view class='mainbox'>
+  <view class='bg' wx:if="{{show}}" bindtap='cancel'>
+    <view class='mainbox' catchtap="tianjia">
       <view class='top'>
         <text class='text'>添加任务</text>
-        <text class='true' bindtap='save'>✓</text>
-        <text class='false' bindtap='cancel'>X</text>
+        <text class='true' catchtap='save'>✓</text>
+        <text class='false' catchtap='cancel'>X</text>
       </view>
       <view class='bottom'>
         <view class='input'>
@@ -61,6 +61,12 @@
           <input type='text' placeholder="请输入所需时长（单位：min）"></input>
         </view>
       </view>
+    </view>
+  </view>
+  <view class='bg' wx:if="{{del}}">
+    <view class='del_box'>
+      <view class='button' bindtap='del_button'>删除</view>
+      <view class='button' bindtap='cancel_button'>取消</view>
     </view>
   </view>
 </view>

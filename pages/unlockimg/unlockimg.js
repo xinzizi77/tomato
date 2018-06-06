@@ -9,5 +9,10 @@ Page({
     wx.redirectTo({//关闭当前页，跳到不相干的页面，没有返回
       url: '../index/index'
     })
+  },
+  go: function () {
+    wx.redirectTo({//关闭当前页，跳到不相干的页面，没有返回
+      url: '../unlockmusic/unlockmusic'
+    })
   }
 })

@@ -20,11 +20,24 @@ Page({
     }
   },
   //点击切换
-  mySelect: function (e) {
-    this.setData({
-      firstPerson: e.target.dataset.me,
-      selectPerson: true,
-      selectArea: false,
+  wai:function(){
+    console.log("aaaa");
+  },
+  lock:function(){
+    wx.navigateTo({//关闭当前页，跳到不相干的页面，没有返回
+      url: '../unlockimg/unlockimg'
+    })
+  },
+  chart: function () {
+    console.log("cccc");    
+    wx.navigateTo({//关闭当前页，跳到不相干的页面，没有返回
+      url: '../chart/chart'
+    })
+  },
+  skip: function () {
+    console.log("cccc");
+    wx.redirectTo({//关闭当前页，跳到不相干的页面，没有返回
+      url: '../show/show'
     })
   },
   tianjia: function (e) {
@@ -40,6 +53,21 @@ Page({
   cancel:function(){
     this.setData({
       show: false
+    })
+  },
+  del:function(){
+    this.setData({
+      del: true
+    })
+  },
+  del_button:function(){
+    this.setData({
+      del: false
+    })
+  },
+  cancel_button: function () {
+    this.setData({
+      del: false
     })
   },
   onLoad: function (options) {

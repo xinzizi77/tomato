@@ -54,7 +54,7 @@
     </view>
   </view>
   <view class='back' wx:if="{{skip}}" bindtap='back'>
-    <view class='box' catcshtap='back_box'>
+    <view class='box' catchtap='back_box'>
       <text>是否确认放弃当前任务(放弃则没有番茄)？</text>
       <view catchtap='true'>确定</view>
       <view catchtap='cancel'>返回</view>
