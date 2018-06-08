@@ -15,11 +15,15 @@
   <block wx:for="{{music_key}}" wx:for-item="item">
     <view class='row'>
       <view class='music_name' catchtap="onMusicTap" data-musicId="{{item.musicId}}">{{item.music_name}}</view>
-      <view class='unlock'>
+      <view class='unlock' catchtap='locking' wx:if="{{item.unlock}}"  data-musicId="{{item.musicId}}">
         <image src='/images/tomato.png'></image>
         <text>{{item.num}}</text>
       </view>
+      <view class='lock' wx:if="{{item.lock}}">已解锁</view>
     </view>
   </block>
+</view>
+<view class='bg' wx:if="{{fanqie}}" bindtap='cancel'>
+<view class='mainbox'>你的番茄数不够！</view>
 </view>
 <audio src="{{src}}" id="myAudio" controls="{{false}}" loop></audio>

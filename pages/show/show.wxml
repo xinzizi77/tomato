@@ -9,14 +9,14 @@
         </canvas>
       </view>
       <view class="draw_btn">{{clock}}</view>
-      <view class='botton'>学习-进行中</view>
+      <view class='botton'>{{content}}-进行中</view>
     </view>
     <view class='lan'>
       <view class='icon' bindtap='picture'>
         <image src='/images/tp.png'></image>
       </view>
       <view class='icon' bindtap="onTap">
-        <image src='/images/music2.png'></image>
+        <image src='/images/music.png'></image>
       </view>
       <view class='icon' wx:if="{{stop}}" bindtap='onStop'>
         <image src='/images/stop.png'></image>
@@ -61,4 +61,7 @@
     </view>
   </view>
   <audio src="{{src}}" id="myAudio" controls="{{false}}" loop></audio>  
+</view>
+<view class='bg' wx:if="{{get_apple}}" bindtap='cancel1'>
+  <view class='mainbox'>恭喜你获得一个番茄！</view>
 </view>

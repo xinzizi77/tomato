@@ -22,7 +22,8 @@ App({
               },
               method:"POST",
               success:function(res){
-                wx.setStorageSync('openid', res.data.openid);
+                console.log(res.data)
+                wx.setStorageSync('openid', res.data);
               },
               fail:function(){ 
                 console.log("发送失败");
@@ -34,6 +35,21 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
+    wx.request({
+      url: 'https://zhishi.kermi.xyz/statistics1.php',
+      data: {
+        openid: wx.getStorageSync('openid')
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded" // 默认值
+      },
+      method: "POST",
+      success: function (obj) {
+        wx.setStorageSync('all_num', obj.data[1].alls);
+      }
+    })
+
+
     // 获取用户信息
     wx.getSetting({
       success: res => {

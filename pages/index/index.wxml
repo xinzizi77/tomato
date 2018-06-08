@@ -1,72 +1,53 @@
-<view class="all" style='background: url("/images/bbg3.png"); background-size: 100% 100%;'>
-  <view class="phone_one" bindtap="clickPerson">
-    <view class="phone_personal">{{firstPerson}}</view>
-    <image src="/images/caidan11.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
-  </view>
-  <view class="person_box">
-    <view class="phone_select" hidden="{{selectPerson}}" catchtap='wai'>
-      <view class="select_one" catchtap='lock'>
-        <image src="/images/sshop.png" class="tubiao"></image>
-      </view>
-      <view class="select_two" catchtap="chart">
-        <image src="/images/tongji.png" class="tubiao"></image>
-      </view>
+<!-- <view class="all" style='background: url("http://193.112.31.67/images/bg.jpg"); background-size: 100% 100%;margin:0'> -->
+<view class="phone_one" bindtap="clickPerson">
+  <view class="phone_personal">{{firstPerson}}</view>
+  <image src="/images/caidan11.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image>
+</view>
+<view class="person_box">
+  <view class="phone_select" hidden="{{selectPerson}}">
+    <view class="select_one" catchtap='lock'>
+      <image src="/images/sshop.png" class="tubiao"></image>
     </view>
-  </view>
-  <view class="task">
-    <view class="box" bindlongpress="del">
-      <view class='target'>
-        <text>看书(长按删除)</text>
-        <text>时长--25分钟</text>
-      </view>
-      <text class='start' catchtap="skip">开始</text>
-    </view>
-    <view class="box">
-      <view class='target'>
-        <text>锻炼</text>
-        <text>时长--25分钟</text>
-      </view>
-      <text class='start'>开始</text>
-    </view>
-    <view class="box">
-      <view class='target'>
-        <text>工作</text>
-        <text>时长--25分钟</text>
-      </view>
-      <text class='start'>开始</text>
-    </view>
-    <view class="box">
-      <view class='target'>
-        <text>学习</text>
-        <text>时长--25分钟</text>
-      </view>
-      <text class='start'>开始</text>
-    </view>
-  </view>
-  <view class="xinjian" bindtap="tianjia">
-    <image src="/images/xinjian4.png"></image>
-  </view>
-  <view class='bg' wx:if="{{show}}" bindtap='cancel'>
-    <view class='mainbox' catchtap="tianjia">
-      <view class='top'>
-        <text class='text'>添加任务</text>
-        <text class='true' catchtap='save'>✓</text>
-        <text class='false' catchtap='cancel'>X</text>
-      </view>
-      <view class='bottom'>
-        <view class='input'>
-          <input type='text' placeholder="请输入任务名称"></input>
-        </view>
-        <view class='time'>
-          <input type='text' placeholder="请输入所需时长（单位：min）"></input>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class='bg' wx:if="{{del}}">
-    <view class='del_box'>
-      <view class='button' bindtap='del_button'>删除</view>
-      <view class='button' bindtap='cancel_button'>取消</view>
+    <view class="select_two" catchtap="chart">
+      <image src="/images/tongji.png" class="tubiao"></image>
     </view>
   </view>
 </view>
+<view class="task">
+  <block wx:for="{{content}}" wx:for-item="item">
+    <view class="box" bindlongpress="del" data-contentid="{{item.id}}"  catchtap="skip" data-contentid="{{item.id}}">
+      <view class='target'>
+        <text>{{item.content}}(长按删除)</text>
+        <text>时长--{{item.time}}分钟</text>
+      </view>
+      <text class='start'>开始</text>
+    </view>
+  </block>
+</view>
+<view class="xinjian" bindtap="tianjia">
+  <image src="/images/xinjian4.png"></image>
+</view>
+<view class='bg' wx:if="{{show}}" bindtap='cancel'>
+  <view class='mainbox' catchtap="tianjia">
+    <view class='top'>
+      <text class='text'>添加任务</text>
+      <text class='true' catchtap='save'>✓</text>
+      <text class='false' catchtap='cancel'>X</text>
+    </view>
+    <view class='bottom'>
+      <view class='input'>
+        <input type='text' placeholder="请输入任务名称" bindinput='inputname'></input>
+      </view>
+      <view class='time'>
+        <input type='text' placeholder="请输入所需时长（单位：min）" bindinput='inputtime'></input>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='bg' wx:if="{{del}}">
+  <view class='del_box'>
+    <view class='button' bindtap='del_button'>删除</view>
+    <view class='button' bindtap='cancel_button'>取消</view>
+  </view>
+</view>
+<!-- </view> -->

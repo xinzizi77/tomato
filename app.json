@@ -3,9 +3,10 @@
   "pages":[
     "pages/index/index",    
     "pages/unlockmusic/unlockmusic",    
-    "pages/unlockimg/unlockimg",
-    "pages/chart/chart",    
     "pages/show/show",    
+    "pages/unlockimg/unlockimg",    
+    "pages/chart/chart",    
+    "pages/welcome/welcome",    
     "pages/logs/logs"
   ],
   "window": {

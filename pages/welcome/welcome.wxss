@@ -1,0 +1,40 @@
+page{
+  background: #F5F3CD;
+}
+open-data{
+  display: inline;
+}
+.container{
+  display: flex; /*定义一个弹性布局*/
+  flex-direction: column;/*按列的方向*/
+  align-items: center;/*让每个元素居中*/
+}
+.touxiang{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 160rpx;
+}
+.text{
+  margin-top: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.into-text{
+    font-size: 30rpx;
+    font-weight: bold;
+}
+button{
+  width: 200rpx;
+  height: 80rpx;
+  background: #F5F3CD;
+}
+.into-kuang{
+  margin-top: 200rpx;
+  border: 1px solid #e8b98a;
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 80rpx;
+  /* color: #F5F3CD; */
+}

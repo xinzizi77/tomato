@@ -58,7 +58,12 @@ page {
 }
 
 .jinbi {
-  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.img{
+  display: flex;
+  flex-direction: row;
 }
 .jinbi image {
   width: 75rpx;
@@ -95,4 +100,22 @@ button{
 .button{
   display: flex;
   flex-direction: row;
+}
+.bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.bg .mainbox{
+  width: 78%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-left: 11%;
+  margin-top: 55%;
+  background: #fff;
+  border-radius: 3px;
 }

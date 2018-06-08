@@ -1,21 +1,21 @@
 <view class='top'>
   <view class='top-today'>
     <text>今日番茄数</text>
-    <text class='num'>0</text>
+    <text class='num'>{{today_num}}</text>
   </view>
   <view class='line'></view>
   <view>
     <text>总计番茄数</text>
-    <text class='num'>0</text>
+    <text class='num'>{{count_num}}</text>
   </view>
 </view>
 <view class='chart'>
   <view class='title'>
     <view class='title-left'>
       <text>今日完成</text>
-      <text class='date'>2018年05月05日</text>
+      <text class='date'>{{date}}</text>
     </view>
-    <view class='title-right'>0个番茄</view>
+    <view class='title-right'>{{today_num}}个番茄</view>
   </view>
       <view class="container">
         <canvas canvas-id="pieCanvas" class="canvas" style="height:300px;" bindtouchstart="touchHandler"></canvas>
@@ -25,9 +25,9 @@
   <view class='title'>
     <view class='title-left'>
       <text>最近一周完成</text>
-      <text class='date'>平均每天0个番茄</text>
+      <text class='date'>平均每天{{ava_num}}个番茄</text>
     </view>
-    <view class='title-right'>0个番茄</view>
+    <view class='title-right'>{{week_num}}个番茄</view>
   </view>
   <view class="container">
 	<view class="title1">
