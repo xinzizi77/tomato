@@ -2,10 +2,9 @@
 
   "pages":[
     "pages/index/index",
-    "pages/show/show",
-   
-    
     "pages/unlockmusic/unlockmusic",
+    
+    "pages/show/show",
     "pages/unlockimg/unlockimg",
     "pages/chart/chart",
     "pages/logs/logs"

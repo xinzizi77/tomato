@@ -3,6 +3,7 @@ Page({
     selectPerson: true,
     
     selectArea: false,
+  
   },
   //点击选择类型
   clickPerson: function () {
@@ -41,5 +42,29 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
-  }
+  },
+  
+
+  data: {
+    flag: false,
+  },
+
+  /**
+   * 弹出层函数
+   */
+  //出现
+  show: function () {
+
+    this.setData({ flag: true })
+
+  },
+  //消失
+
+  hide: function () {
+
+    this.setData({ flag: false })
+
+  },
+
+  
 })

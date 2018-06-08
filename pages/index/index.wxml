@@ -12,10 +12,24 @@
   </view>
  </view>
  <view class="task">
- <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
+ <view class="box">
+ 
+ <image src="/images/study.png"></image><text>学习</text></view>
   <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
    <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
     <view class="box"><image src="/images/study.png"></image><text>学习</text></view>
-     <view class="xinjian"><image src="/images/xinjian4.png"></image></view>
+     <view class="xinjian"><image bindtap="show" src="/images/xinjian4.png"></image></view>
+   
+<view class="modal-box" hidden="{{flag}}" bindtap="hide">
+
+    <view class="modal-body">
+
+      <view class="modal-content">
+      
+        <button class="knowBtn" bindtap="hide">我知道了</button>
+     </view>
+    </view>
+  </view>
+     
  </view>
  </view>
