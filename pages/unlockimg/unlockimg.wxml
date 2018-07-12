@@ -1,22 +1,22 @@
 <!--pages/unlockimg/unlockimg.wxml-->
 <view class='button'>
-  <view class='return' bindtap='return'>返回</view>
+   <view class='return' bindtap='return'>返回</view> 
   <view class='go' bindtap='go'>解锁音乐-></view>
 </view>
 <view class="title">
   <text decode="{{true}}">背景图片\n                         
   解锁更多不同的背景图片</text>
 </view>
-<swiper class="movie-swiper" indicator-dots='{{true}}' previous-margin='50rpx' next-margin='50rpx' current='{{weeklyMovieList.length-1}}'>
-  <swiper-item class='movie'>
+<swiper class="movie-swiper" indicator-dots='{{true}}' previous-margin='50rpx' next-margin='50rpx'>
+   <swiper-item class='movie'>
     <view class='container movie-card'>
       <image class='movie-image' src='http://193.112.31.67/images/bg1.jpg'></image>
       <view class="jinbi">
         <text>默认</text>
       </view>
     </view>
-  </swiper-item>
-  <swiper-item class='movie' wx:for="{{weeklyMovieList}}" wx:key="key">
+  </swiper-item> 
+   <swiper-item class='movie' wx:for="{{weeklyMovieList}}" wx:key="key">
     <view class='container movie-card'>
       <image class='movie-image' src='{{item.url}}'></image>
       <view class='jinbi' wx:if="{{item.unlock}}" data-imgId="{{item.imgId}}">
@@ -28,7 +28,7 @@
       </view>
       <view class='lock' wx:if="{{item.lock}}">已解锁</view>
     </view>
-  </swiper-item>
+  </swiper-item> 
 </swiper>
 <view class='bg' wx:if="{{fanqie}}" bindtap='cancel'>
   <view class='mainbox'>你的番茄数不够！</view>

@@ -35,7 +35,7 @@ Page({
   },
   //点击切换
   lock: function () {
-    wx.navigateTo({//关闭当前页，跳到不相干的页面，没有返回
+    wx.redirectTo({//关闭当前页，跳到不相干的页面，没有返回
       url: '../unlockimg/unlockimg'
     })
   },

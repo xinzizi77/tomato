@@ -20,19 +20,21 @@ Page({
       },
       method: "POST",
       success: function (obj) {
-        console.log(obj.data[0].pic_id[0])
-        for (var index in Data.pictureList1) {
-          for (var i in obj.data[0].pic_id) {
-            if (parseInt(Data.pictureList1[index].pictureId) == parseInt(obj.data[0].pic_id[i]) ) {                 
-              Data.pictureList1[index].unlock = false;
-              Data.pictureList1[index].lock = true;    
-              console.log(Data.pictureList1)
-            }
-          that.setData({
-            weeklyMovieList: Data.pictureList1,
-          })
-          }
-        }
+        console.log(obj.data);
+         if(obj.data[0].pic_id!=null){
+           for (var index in Data.pictureList1) {
+             for (var i in obj.data[0].pic_id) {
+               if (parseInt(Data.pictureList1[index].pictureId) == parseInt(obj.data[0].pic_id[i])) {
+                 Data.pictureList1[index].unlock = false;
+                 Data.pictureList1[index].lock = true;
+                 console.log(Data.pictureList1)
+               }
+               that.setData({
+                 weeklyMovieList: Data.pictureList1,
+               })
+             }
+           }
+         }
       }
     })
   },

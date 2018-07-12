@@ -1,6 +1,6 @@
 <view class="all" style='background: url("{{bg}}"); background-size: 100%, 100%;'>
   <view class="wrap">
-    <view class="top">“遗憾的是我们生活在两条平行直线永远不会相交的世界里”</view>
+    <view class="top">“当“拖延症”渐渐成为一种“慢性病”，开始种“番茄”以对抗顽疾吧！”</view>
     <view class="circle-box">
       <view hidden="{{circle}}">
         <canvas class="circle" style="width:240px; height:240px;" canvas-id="canvasCircle">
@@ -36,8 +36,8 @@
     <view class='box' catchtap='picture_box'>
       <scroll-view scroll-y="true">
         <block wx:for="{{picture_key}}" wx:for-item="item">
-          <view class='pho' catchtap="onPictureTap" data-pictureId="{{item.pictureId}}">
-            <image src='{{item.url}}'></image>
+          <view class='pho' catchtap="onPictureTap" data-pictureId="{{item.picture_id}}">
+            <image src='{{item.picture_path}}'></image>
           </view>
         </block>
       </scroll-view>
@@ -48,7 +48,7 @@
       <scroll-view scroll-y="true">
         <view class='song' catchtap='MusicStop'>无音乐</view>
         <block wx:for="{{music_key}}" wx:for-item="item">
-          <view class='song' catchtap="onMusicTap" data-musicId="{{item.musicId}}">{{item.music_name}}</view>
+          <view class='song' catchtap="onMusicTap" data-musicId="{{item.music_id}}">{{item.music_name}}</view>
         </block>
       </scroll-view>
     </view>

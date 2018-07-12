@@ -10,8 +10,9 @@ var total_micro_second;    //设置倒计时
 var step = 1, startAngle = 1.5 * Math.PI, endAngle = 0;
 var animation_interval = 1000;
 var n;
-
-var musicLock=[];
+var musicLock;
+var imgLock;
+var cxt_arc = wx.createCanvasContext('canvasCircle');
 var animation = function () {
   if (step <= n) {
     endAngle = step * 2 * Math.PI / n + 1.5 * Math.PI;
@@ -32,7 +33,7 @@ function drawArc(s, e) {
   ctx.beginPath();
   ctx.arc(x, y, radius, s, e, false);
   ctx.stroke()
-  ctx.draw()
+  ctx.draw()    
 }
 function countdown(that, total_micro_second) {
   //  console.log('剩余时间：' + total_micro_second);
@@ -110,8 +111,7 @@ Page({
     get_apple:false   
   },
   onReady: function () {
-    //创建并返回绘图上下文context对象。
-    var cxt_arc = wx.createCanvasContext('canvasCircle');
+    //创建并返回绘图上下文context对象
     cxt_arc.setLineWidth(6);
     cxt_arc.setStrokeStyle('rgba(0, 0, 0, 0.1)');
     cxt_arc.setLineCap('round');
@@ -133,24 +133,14 @@ Page({
       },
       method: "POST",
       success: function (obj) {
-
-        console.log(obj)
-        // var pictureLock = [];
-        // pictureLock.push(Data.pictureList[0]);
-        // console.log(typeof Data.pictureList[0])
-        // for (var x = 1; x <= obj.data.picture_id.length; x++) {                              
-        //     for(var index in Data.pictureList){
-        //         if (parseInt(Data.pictureList[index].pictureId) == parseInt(obj.data.picture_id[x - 1]) ){
-        //           pictureLock.push(Data.pictureList[index]);
-        //         // console.log(pictureLock[x]);
-        //         // console.log(Data.pictureList[index]);                                      
-        //         // console.log(pictureLock);    
-        //         break;            
-        //       }
-        //     }
-        // }
-        // console.log(pictureLock);
-        // pictureLock[1]= Data.pictureList[1]
+        // console.log(obj)
+        musicLock=obj.data.music;
+        imgLock=obj.data.picture;
+        that.setData({
+          music_key: musicLock,
+          picture_key: imgLock
+        });
+        // console.log(imgLock)
       }
     })
 
@@ -175,7 +165,7 @@ Page({
       });
         total_micro_second = parseInt(postData.time)*60; 
         n = total_micro_second+1;
-
+        // console.log(n)
         draw();
         clearInterval(cutTime);
         var downTime = function () {
@@ -334,8 +324,15 @@ Page({
     })
   },
   cancel1:function(){
-    wx.navigateTo({//关闭当前页，跳到不相干的页面，没有返回
+    wx.redirectTo({//关闭当前页，跳到不相干的页面，没有返回
       url: '../index/index'
     })
+  },
+  onUnload: function () {
+    // console.log(cxt);    
+    step = 1; startAngle = 1.5 * Math.PI; endAngle = 0;
+    animation_interval = 1000; n = 0;
+    draw(); 
+    // 页面关闭
   }
 })

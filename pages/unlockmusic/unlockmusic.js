@@ -55,7 +55,7 @@ Page({
   locking: function (event){
     var musicId = event.currentTarget.dataset.musicid;
     var postData =Data.musicList[musicId];
-    console.log(wx.getStorageSync('all_num'))
+    // console.log(wx.getStorageSync('all_num'))
     if (parseInt(wx.getStorageSync('all_num')) >= parseInt(postData.num) ){
       wx.request({
         url: 'https://zhishi.kermi.xyz/unlock_1.php',
@@ -68,6 +68,7 @@ Page({
         },
         method: "POST",
         success: function (obj) {
+          console.log(obj);
           wx.setStorageSync('all_num', obj.data);
           console.log(wx.getStorageSync('all_num'));
         }

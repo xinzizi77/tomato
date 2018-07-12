@@ -4,15 +4,14 @@ var pieChart = null;
 var columnChart = null;
 var myDate = new Date();
 var chartData;
-// console.log(wx.getStorageSync('openid'));                                                              
 Page({
   data: {
     isMainChartDisplay: true,
     date:myDate.toLocaleDateString()
   },
   backToMainChart: function () {
+    console.log(wx.getStorageSync('chartData'))                                                                  
     this.setData({
-      chartTitle: chartData.main.title,
       isMainChartDisplay: true
     });
     columnChart.updateData({
@@ -30,7 +29,6 @@ Page({
     var index = columnChart.getCurrentDataIndex(e);
     if (index > -1 && index < chartData.sub.length && this.data.isMainChartDisplay) {
       this.setData({
-        chartTitle: chartData.sub[index].title,
         isMainChartDisplay: false
       });
       columnChart.updateData({
@@ -68,47 +66,15 @@ Page({
       method: "POST",
       success: function (obj) {
         console.log(obj);
-        // console.log(obj.data.main.categories)
-        chartData = {
-          main: {
-            data: [12, 16, 14, 13, 10, 11, 13],
-            categories: ['5月6日', '7', '8', '9', '10', '11', '12']
+        console.log(obj.data.sub)
+        chartData={
+          main:{
+            data: obj.data.main.data,
+            categories: obj.data.main.categories
           },
-          sub: [{
-            title: '5月6日完成',
-            data: [2, 5, 2, 3],
-            categories: ['看书', '工作', '学习', '运动']
-          }, {
-            title: '5月7日完成',
-            data: [3, 4, 7, 2],
-            categories: ['阅读', '运动', '喝水', '休息']
-          }, {
-            title: '5月8日完成',
-            data: [3, 4, 7, 2],
-            categories: ['阅读', '运动', '喝水', '休息']
-          }, {
-            title: '5月8日完成',
-            data: [3, 4, 7, 2],
-            categories: ['阅读', '运动', '喝水', '休息']
-          }, {
-            title: '5月9日完成',
-            data: [3, 4, 7, 2],
-            categories: ['阅读', '运动', '喝水', '休息']
-          }, {
-            title: '5月10日完成',
-            data: [3, 4, 7, 2],
-            categories: ['阅读', '运动', '喝水', '休息']
-          }, {
-            title: '5月11日完成',
-            data: [3, 4, 7, 2],
-            categories: ['阅读', '运动', '喝水', '休息']
-          }, {
-            title: '5月12日完成',
-            data: [3, 4, 7, 2],
-            categories: ['阅读', '运动', '喝水', '休息']
-          }]
-        };
-        columnChart = new wxCharts({
+          sub: obj.data.sub
+        },
+          columnChart = new wxCharts({
           canvasId: 'columnCanvas',
           type: 'column',
           animation: true,
